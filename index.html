@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="section-a" class="bg-dark">
+        <div class="container font-light">
+            <div class="row">
+                <h1 class="heading">Add New Cradentials</h1>
+                <hr>
+            </div>
+        </div>
+    </section>
+    <section id="section-b">
+        <div class="container py-4">
+            <form id="form" action="">
+                <div class="input-field-group">
+                    <div class="input-field">
+                        <label for="name"></label>
+                        <input type="text" name="name" placeholder="Enter customer name as writen in Passport">
+                    </div>
+                    <div class="input-field">
+                        <label for="email"></label>
+                        <input type="text" name="email" placeholder="Customer Email">
+                    </div>
+                    <div class="input-field">
+                        <label for="phone"></label>
+                        <input type="text" name="phone" placeholder="Customer Phone Number">
+                    </div>
+                    <div class="input-field">
+                        <label for="date_of_issue"></label>
+                        <input type="text" name="date_of_issue" placeholder="Enter the date of issue (E.G: dd/mm/yyyy)">
+                    </div>
+                    <div class="input-field">
+                        <label for="assisted_by"></label>
+                        <input type="text" name="assisted_by" placeholder="Person who give this client">
+                    </div>
+                    <div class="input-field">
+                        <label for="payment"></label>
+                        <input type="text" name="payment" placeholder="Amount of payment">
+                    </div>
+                    <div class="input-field">
+                        <h2>Mention Paid Or Not</h2>
+                        <input type="radio" name="paid" id="paymentPaid">
+                        <label for="paymentPaid">Paid</label>
+                        <div class="mr-2"></div>
+                        <input type="radio" name="NotPaid" id="paymentNotPaid">
+                        <label for="paymentNotPaid">Not Paid</label>
+                    </div>
+                    <div class="input-field">
+                        <h2>Application Status:</h2>
+                        <input type="radio" name="recieved" id="recievedApplication">
+                        <label for="recievedApplication">Recieved</label>
+                        <div class="mr-2"></div>
+                        <input type="radio" name="Processing" id="processingApplication">
+                        <label for="processingApplication">Processing</label>
+                        <div class="mr-2"></div>
+                        <input type="radio" name="CompletedApplication" id="CompletedApplication">
+                        <label for="CompletedApplication">Completed</label>
+                    </div>
+                </div>
+                <div class="input-field checkbox">
+                    <h2>Services Include :</h2>
+                    <div class="checkboxes">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="services1" name="services">
+                            <label for="services1">Full Package</label>
+                        </div> 
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="services2" name="services">
+                            <label for="services2">Finance</label> 
+                        </div> 
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="services3" name="services">
+                            <label for="services3">Social</label>
+                        </div> 
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="services4" name="services">
+                            <label for="services4">Junta</label>
+                        </div> 
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="services5" name="services">
+                            <label for="services5">Contract</label>
+                        </div>  
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="services6" name="services">
+                            <label for="services6">SEF Entry</label>
+                        </div>  
+                    </div>
+                </div>
+                
+                <div class="agent-field-group">
+                    <div class="input-field">
+                        <label for="agent_name"></label>
+                        <input type="text" name="agent_name" placeholder="Agent Name 1">
+                    </div>
+                    <div class="input-field">
+                        <label for="agent_name"></label>
+                        <input type="text" name="agent_name" placeholder="Agent Name 2">
+                    </div>
+                    <div class="input-field checkbox">
+                        <h2>Mention Services Agents 1 Working with :</h2>
+                        <div class="checkboxes">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceOne1" name="agentServiceOne">
+                                <label for="agentServiceOne1">Finance</label>
+                            </div> 
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceOne2" name="agentServiceOne">
+                                <label for="agentServiceOne2">Social</label> 
+                            </div> 
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceOne3" name="agentServiceOne">
+                                <label for="agentServiceOne3">Junta</label>
+                            </div> 
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceOne4" name="agentServiceOne">
+                                <label for="agentServiceOne4">Contract</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-field checkbox">
+                        <h2>Mention Services Agents 2 Working with :</h2>
+                        <div class="checkboxes">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceTwo1" name="agentServiceTwo">
+                                <label for="agentServiceTwo1">Finance</label>
+                            </div> 
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceTwo2" name="agentServiceTwo">
+                                <label for="agentServiceTwo2">Social</label> 
+                            </div> 
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceTwo3" name="agentServiceTwo">
+                                <label for="agentServiceTwo3">Junta</label>
+                            </div> 
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceTwo4" name="agentServiceTwo">
+                                <label for="agentServiceTwo4">Contract</label>
+                            </div>
+                              
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous"></script> -->
+</body>
+</html>
