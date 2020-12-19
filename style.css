@@ -71,6 +71,12 @@ input[type="radio"]{
     padding: none;
     line-height: 10px;
 }
+input[type="file"]{
+    padding: 5px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+}
 .checkboxes{
     margin-top: 15px;
     display: grid;

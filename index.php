@@ -1,3 +1,28 @@
+
+<?php include 'classes/Admin.php';?>
+<?php
+
+    // $client = new Admin();
+    // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //    $insertClient = $client->clientInsert($_POST);
+    // }
+print_r ($_POST);
+//     $services[] = $_POST['services'];
+//     if(empty($services)) 
+//     {
+//         echo("You didn't select any buildings.");
+//     } 
+//     else 
+//     {
+//         $N = count($services);
+
+//         echo("You selected $N door(s): ");
+//         for($i=0; $i < $N; $i++)
+//         {
+//         echo($services[$i] . " ");
+//         }
+//     }
+// ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +44,8 @@
     </section>
     <section id="section-b">
         <div class="container py-4">
-            <form id="form" action="">
+            <form id="form" action="" method="post">
+                <!-- Customer Cradentials -->
                 <div class="input-field-group">
                     <div class="input-field">
                         <label for="name"></label>
@@ -34,8 +60,8 @@
                         <input type="text" name="phone" placeholder="Customer Phone Number">
                     </div>
                     <div class="input-field">
-                        <label for="date_of_issue"></label>
-                        <input type="text" name="date_of_issue" placeholder="Enter the date of issue (E.G: dd/mm/yyyy)">
+                        <label for="date"></label>
+                        <input type="text" name="date" placeholder="Enter the date of issue (E.G: dd/mm/yyyy)">
                     </div>
                     <div class="input-field">
                         <label for="assisted_by"></label>
@@ -64,39 +90,77 @@
                         <input type="radio" name="CompletedApplication" id="CompletedApplication">
                         <label for="CompletedApplication">Completed</label>
                     </div>
+                    <div class="input-field">
+                        <h2>Upload Files</h2>
+                        <input type="file" value="" >
+                    </div>
                 </div>
+                <!-- List Of All Services -->
                 <div class="input-field checkbox">
                     <h2>Services Include :</h2>
                     <div class="checkboxes">
                         <div class="checkbox-group">
-                            <input type="checkbox" id="services1" name="services">
+                            <input type="checkbox" id="services1" name="services[]" value="Full Package1">
                             <label for="services1">Full Package</label>
                         </div> 
                         <div class="checkbox-group">
-                            <input type="checkbox" id="services2" name="services">
+                            <input type="checkbox" id="services2" name="services[]" value="Finance">
                             <label for="services2">Finance</label> 
                         </div> 
                         <div class="checkbox-group">
-                            <input type="checkbox" id="services3" name="services">
+                            <input type="checkbox" id="services3" name="services[]" value="Social">
                             <label for="services3">Social</label>
                         </div> 
                         
                         <div class="checkbox-group">
-                            <input type="checkbox" id="services4" name="services">
+                            <input type="checkbox" id="services4" name="services[]">
                             <label for="services4">Junta</label>
                         </div> 
                         
                         <div class="checkbox-group">
-                            <input type="checkbox" id="services5" name="services">
+                            <input type="checkbox" id="services5" name="services[]">
                             <label for="services5">Contract</label>
                         </div>  
                         <div class="checkbox-group">
-                            <input type="checkbox" id="services6" name="services">
+                            <input type="checkbox" id="services6" name="services[]">
                             <label for="services6">SEF Entry</label>
                         </div>  
                     </div>
                 </div>
-                
+
+                <!-- Completed Services-->
+                <div class="input-field checkbox">
+                    <h2>Services Completed :</h2>
+                    <div class="checkboxes">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="completedServices1" name="completedServices">
+                            <label for="completedServices1">Full Package</label>
+                        </div> 
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="completedServices2" name="completedServices">
+                            <label for="completedServices2">Finance</label> 
+                        </div> 
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="completedServices3" name="completedServices">
+                            <label for="completedServices3">Social</label>
+                        </div> 
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="completedServices4" name="completedServices">
+                            <label for="completedServices4">Junta</label>
+                        </div> 
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="completedServices5" name="completedServices">
+                            <label for="completedServices5">Contract</label>
+                        </div>  
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="completedServices6" name="completedServices">
+                            <label for="completedServices6">SEF Entry</label>
+                        </div>  
+                    </div>
+                </div>
+                <!-- Agents Details and Services they are woriing with -->
                 <div class="agent-field-group">
                     <div class="input-field">
                         <label for="agent_name"></label>
@@ -146,9 +210,62 @@
                                 <input type="checkbox" id="agentServiceTwo4" name="agentServiceTwo">
                                 <label for="agentServiceTwo4">Contract</label>
                             </div>
-                              
                         </div>
                     </div>
+                    <!-- agent 3 and 4 -->
+                    <div class="input-field">
+                        <label for="agent_name"></label>
+                        <input type="text" name="agent_name" placeholder="Agent Name 3">
+                    </div>
+                    <div class="input-field">
+                        <label for="agent_name"></label>
+                        <input type="text" name="agent_name" placeholder="Agent Name 4">
+                    </div>
+                    <div class="input-field checkbox">
+                        <h2>Mention Services Agents 3 Working with :</h2>
+                        <div class="checkboxes">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceThree1" name="agentServiceThree">
+                                <label for="agentServiceThree1">Finance</label>
+                            </div> 
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceThree2" name="agentServiceThree">
+                                <label for="agentServiceThree2">Social</label> 
+                            </div> 
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceThree3" name="agentServiceThree">
+                                <label for="agentServiceThree3">Junta</label>
+                            </div> 
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceThree4" name="agentServiceThree">
+                                <label for="agentServiceThree4">Contract</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-field checkbox">
+                        <h2>Mention Services Agents 4 Working with :</h2>
+                        <div class="checkboxes">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceFour1" name="agentServiceFour">
+                                <label for="agentServiceFour1">Finance</label>
+                            </div> 
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceFour2" name="agentServiceFour">
+                                <label for="agentServiceFour2">Social</label> 
+                            </div> 
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceFour3" name="agentServiceFour">
+                                <label for="agentServiceFour3">Junta</label>
+                            </div> 
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agentServiceFour4" name="agentServiceFour">
+                                <label for="agentServiceFour4">Contract</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-button">
+                    <input type="submit" name="submit" Value="Save" />
                 </div>
             </form>
         </div>
